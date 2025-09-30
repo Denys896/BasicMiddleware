@@ -87,12 +87,12 @@ class Wyserver:  # Main server class
             headers = headers + extra_headers  # Combine headers
             
         elif method != 'GET' and path in ['/about', '/contact']:  # Check for method not allowed
-            status, headers, body = self.method_not_allowed()  # Return response
+            status, headers, body = self.method_not_allowed() 
         else:  # Route not found
-            status, headers, body = self.not_found()  # Return response
+            status, headers, body = self.not_found() 
         
-        start_response(status, headers)  # Start WSGI response
-        return [body.encode('utf-8')]  # Return response body
+        start_response(status, headers)
+        return [body.encode('utf-8')] 
     
     def _wrap_middleware(self, middleware, next_handler):  # wrap middleware
         if isinstance(middleware, type) and issubclass(middleware, BaseMiddleware):  # Check if class-based middleware
