@@ -303,3 +303,14 @@ if __name__ == '__main__':
         print("  GET /open/ping") 
         print("  GET /footer-test") 
         httpd.serve_forever() 
+
+
+#curl http://localhost:8000/
+#curl http://localhost:8000/about
+#curl http://localhost:8000/contact
+#curl "http://localhost:8000/inspect?name=test&value=123"
+#curl -v http://localhost:8000/time-test
+#curl http://localhost:8000/secure/ping
+#curl -H "Authorization: valid-token-123" http://localhost:8000/secure/ping
+#curl http://localhost:8000/open/ping
+#curl http://localhost:8000/footer-test
